@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
 import { WeatherService } from '../service/weather.service';
 import { WeatherData } from '../module/weather.module';
+import {HttpErrorResponse} from "@angular/common/http";
 
 @Component({
   selector: 'app-weather',
@@ -20,10 +21,10 @@ export class WeatherComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.onGetWeatherDetails(this.cityName);
     this.cityName = '';
-  
+
   }
 
- 
+
   onSubmitForm(){
     this.onGetWeatherDetails(this.cityName);
     this.cityName = '';
@@ -41,10 +42,16 @@ export class WeatherComponent implements OnInit, OnDestroy {
           this.weatherData = response;
           console.log(this.weatherData);
         },
-        error: (error: WeatherData) => {
+        error: (error: any) => {
           // Logging any errors that occurred during the API call
-          console.error('Error from Weather API:');
-          console.error(error);
+          console.error('Error retrieving weather data:', error);
+
+          if (error instanceof HttpErrorResponse) {
+            console.error(`HTTP Error Status: ${error.status}`);
+            console.error(`Error Message: ${error.message}`);
+          } else {
+            console.error('An unexpected error occurred:', error);
+          }
         },
       });
   }
