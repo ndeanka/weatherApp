@@ -9,8 +9,8 @@
         <img src="assets/hot.jpeg" *ngIf="weatherData.current.temp_c > 15" alt="hot" height="900" width="900">
         <img src="assets/cold.jpeg" *ngIf="weatherData.current.temp_c <= 15" alt="cold" height="900" width="900">
         <div class=" container__weather-data">
-            <div class="weather-data__location">{{weatherData.location.region}}</div>
-            <div class="weather-data__temperature">{{weatherData.current.temp_c | number: '1.0-0' }}°C</div>
+            <div class="weather-data__location">{{weatherData.location.name}} | {{weatherData.location.country}}</div>
+            <div class="weather-data__temperature">{{weatherData.current.feelslike_c | number: '1.0-0' }}°C</div>
         </div>
     </div>
     <div class="container__lower-data">

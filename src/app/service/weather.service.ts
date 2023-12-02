@@ -4,15 +4,13 @@ import {WeatherData} from '../module/weather.module';
 import {Observable} from 'rxjs';
 import {environment} from "../../environments/environment.development";
 
-// import {environment} from "../../environments/environment";
-
 @Injectable({
   providedIn: 'root',
 })
 export class WeatherService {
-  private weatherAPI = environment.weatherApiBaseUrl;
+  private weatherAPI: string = environment.weatherApiBaseUrl;
 
-  private headers = new HttpHeaders()
+  private headers: HttpHeaders = new HttpHeaders()
     .set(
       environment.XRapidAPIHostHeaderName,
       environment.XRapidAPIHostHeaderValue
