@@ -3,6 +3,7 @@ import { Subject, takeUntil } from 'rxjs';
 import { WeatherService } from '../service/weather.service';
 import { WeatherData } from '../module/weather.module';
 import {HttpErrorResponse} from "@angular/common/http";
+import {NgxSpinnerService} from "ngx-spinner";
 
 @Component({
   selector: 'app-weather',
@@ -11,19 +12,26 @@ import {HttpErrorResponse} from "@angular/common/http";
   encapsulation: ViewEncapsulation.None,
 })
 export class WeatherComponent implements OnInit, OnDestroy {
-  constructor(private weatherService: WeatherService) {}
+  constructor(private weatherService: WeatherService, private spinner:NgxSpinnerService) {}
 
   destroy$: Subject<boolean> = new Subject();
 
   weatherData?: WeatherData;
   cityName: string = 'Dodoma';
 
+
   ngOnInit() {
     this.onGetWeatherDetails(this.cityName);
     this.cityName = '';
+    this.spinner.show().then();
+
+
+    setTimeout(() => {
+      /** spinner ends after 5 seconds */
+      this.spinner.hide();
+    }, 5000);
 
   }
-
 
   onSubmitForm(){
     this.onGetWeatherDetails(this.cityName);
@@ -34,6 +42,7 @@ export class WeatherComponent implements OnInit, OnDestroy {
 
   // Calling the WeatherService to get weather data for the specified city
   onGetWeatherDetails(cityName: string) {
+
     this.weatherService
       .getWeatherData(cityName)
       .pipe(takeUntil(this.destroy$))

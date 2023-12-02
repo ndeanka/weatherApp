@@ -4,6 +4,10 @@
     </form>
 </div>
 
+<!--<div *ngIf="isLoading">Loading...</div>-->
+<ngx-spinner *ngIf="!weatherData" bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "pacman"
+             [fullScreen] = "true"><p style="color: white" > Loading... </p>
+</ngx-spinner>
 <div class="container" *ngIf="weatherData">
     <div class="container__upper-data">
         <img src="assets/hot.jpeg" *ngIf="weatherData.current.temp_c > 15" alt="hot" height="900" width="900">
