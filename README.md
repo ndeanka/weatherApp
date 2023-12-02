@@ -1,7 +1,7 @@
 # Angular 17 Weather App
 Welcome to the Angular 17 Weather App! This application allows users to check the weather forecast for different cities using the RapidAPI.
 
-#Features
+# Features
 Search: Enter the name of a city to get the current weather forecast.
 Display: View detailed weather information, including maximum and minimum temperatures, humidity, and wind speed.
 Images: Visual representation of hot and cold weather conditions.
