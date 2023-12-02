@@ -1,27 +1,37 @@
-# WeatherApp
+# Angular 17 Weather App
+Welcome to the Angular 17 Weather App! This application allows users to check the weather forecast for different cities using the RapidAPI.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.0.
+#Features
+Search: Enter the name of a city to get the current weather forecast.
+Display: View detailed weather information, including maximum and minimum temperatures, humidity, and wind speed.
+Images: Visual representation of hot and cold weather conditions.
 
-## Development server
+#Technologies Used
+Angular 17: This app is built using the latest version of the Angular framework.
+RapidAPI: Weather data is fetched from RapidAPI to provide accurate and up-to-date information.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+#Getting Started
+Follow these steps to run the Angular 17 Weather App locally:
 
-## Code scaffolding
+Clone the repository: git clone https://github.com/your-username/angular-weather-app.git
+Navigate to the project directory: cd angular-weather-app
+Install dependencies: npm install
+Start the development server: ng serve
+Open your browser and go to http://localhost:4200/ to use the app.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+#Usage
+Enter the name of a city in the search bar.
+Submit the form to fetch and display the weather forecast.
+Explore detailed weather information, including temperature, humidity, and wind speed.
 
-## Build
+#API Key
+This app uses the RapidAPI to fetch weather data. To run the app, you must obtain a RapidAPI key and replace it in the environment.ts file.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+#Contributing
+Feel free to fork the repository and submit a pull request if you want to contribute to this project. We welcome contributions!
 
-## Running unit tests
+#Issues
+If you encounter any issues or have suggestions for improvement, please open an issue on the GitHub repository.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+#Acknowledgements
+Thanks to RapidAPI for providing the weather data API.
