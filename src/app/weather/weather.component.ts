@@ -49,7 +49,6 @@ export class WeatherComponent implements OnInit, OnDestroy {
       .subscribe({
         next: (response: WeatherData) => {
           this.weatherData = response;
-          console.log(this.weatherData);
         },
         error: (error: any) => {
           // Logging any errors that occurred during the API call
